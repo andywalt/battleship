@@ -4,7 +4,7 @@ require_relative 'battleship_game_helpers.rb'
 # Start Game
 
 human_fleet_1 = Fleet.new()
-computer_fleet = Fleet.new()
+human_fleet_2 = Fleet.new()
 
 puts <<-eos
   Welcome to BATTLESHIP!
@@ -24,22 +24,31 @@ pre_display_board
 
 # Layout ships on the boards
 get_user_input(human_fleet_1)
-random_get_user_input(computer_fleet)
+get_user_input(human_fleet_2)
+# random_get_user_input(computer_fleet)
 
-# Create human board
-human_board = PlayerBoard.new(human_fleet_1)
-human_board.generate_board(["Your Board"])
+# Create Player 1 board
+human_board_1 = PlayerBoard.new(human_fleet_1)
+human_board_1.generate_board(["Player 1 Board"])
 
-# Create computer board
-computer_board = PlayerBoard.new(computer_fleet)
-computer_board.generate_board(["Computer Board"])
+# Create Player 2 board
+human_board_2 = PlayerBoard.new(human_fleet_2)
+human_board_2.generate_board(["Player 2 Board"])
+
+# # Create computer board
+# computer_board = PlayerBoard.new(computer_fleet)
+# computer_board.generate_board(["Computer Board"])
 
 # Create human screen (view of the hits and misses)
-human_screen = PlayerScreen.new(computer_board)
-human_screen.generate
+human_screen_1 = PlayerScreen.new(human_board_2)
+human_screen_1.generate
 
-# Create computer screen (view of hits and misses)
-computer_screen = PlayerScreen.new(human_board)
-computer_screen.generate
+# Create human screen (view of the hits and misses)
+human_screen_2 = PlayerScreen.new(human_board_1)
+human_screen_2.generate
+
+# # Create computer screen (view of hits and misses)
+# computer_screen = PlayerScreen.new(human_board)
+# computer_screen.generate
 # Start battle
-battle(computer_board, computer_screen, human_board, human_screen)
+battle(human_board_1, human_screen_1, human_board_2, human_screen_2)

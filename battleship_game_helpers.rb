@@ -79,18 +79,19 @@ def computer_shoot(computer_screen)
   computer_screen.shoot(random_coords)
 end
 
-def battle(computer_board, computer_screen, human_board, human_screen)
+def battle(human_board_1, human_screen_1, human_board_2, human_screen_2)
   winner = false
   while !winner
-    human_shoot(human_screen)
-    human_screen.display
-    human_board.display
-    puts "Press Enter to have the computer fire"
-    junk = gets
-    computer_shoot(computer_screen)
-    puts "Computer has fired"
-    human_screen.display
-    human_board.display
+    human_shoot(human_screen_1)
+    human_screen_2.display
+    human_board_1.display
+    # puts "Press Enter to have the computer fire"
+    # junk = gets
+    # computer_shoot(computer_screen)
+    # puts "Computer has fired"
+    human_shoot(human_screen_2)
+    human_screen_1.display
+    human_board_2.display
   end
 end
 
