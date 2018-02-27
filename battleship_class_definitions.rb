@@ -1,4 +1,3 @@
-# require 'pry'
 require_relative 'battleship_utils.rb'
 
 
@@ -157,17 +156,19 @@ class Ship
 end
 
 class Fleet
-  attr_accessor :aircraft_carrier, :battleship, :cruiser, :destroyer_1, :destroyer_2, :submarine_1, :submarine_2
+  attr_accessor :aircraft_carrier, :battleship, :cruiser, :destroyer_1, :submarine_1
+  # :destroyer_2 & :submarine_1 taken away
   attr_reader :filled_coords, :ships
   def initialize
     @aircraft_carrier = Ship.new(5)
     @battleship = Ship.new(4)
     @cruiser = Ship.new(3)
     @destroyer_1 = Ship.new(2)
-    @destroyer_2 = Ship.new(2)
+    # @destroyer_2 = Ship.new(2)
     @submarine_1 = Ship.new(1)
-    @submarine_2 = Ship.new(1)
-    @ships = [@aircraft_carrier, @battleship, @cruiser, @destroyer_1, @destroyer_2, @submarine_1, @submarine_2]
+    # @submarine_2 = Ship.new(1)
+    @ships = [@aircraft_carrier, @battleship, @cruiser, @destroyer_1, @submarine_1]
+    # @destroyer_2 & @submarine_2 taken away
     @filled_coords = []
   end
 

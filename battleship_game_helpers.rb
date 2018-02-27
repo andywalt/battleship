@@ -9,18 +9,18 @@ def pre_display_board
   end
 
 def ship_input_prompt(ship, name)
-  pre_display_board
   puts "Enter the position of your #{name} (length #{ship.length}). Choose Row A-J and Column 1-10 (Ex: B5)."
   ship.position = gets.chomp
   puts "Enter the heading of your #{name} (H for Horizontal or V for Vertical)."
   ship.heading = gets.chomp
+  p "Added #{name} to board!"
 end
 
 def get_ship(fleet, ship, name)
   ship_input_prompt(ship, name)
   ship.gen_coordinates
   while !(ship.check_position && fleet.check_coords(ship))
-    p "Ship is out of bounds or collides with another ship, choose new location"
+    p "Ship is out of bounds or collides with another ship, choose new location."
     ship_input_prompt(ship, name)
     ship.gen_coordinates
   end
@@ -93,3 +93,4 @@ def battle(computer_board, computer_screen, human_board, human_screen)
     human_board.display
   end
 end
+

@@ -3,7 +3,7 @@ require_relative 'battleship_game_helpers.rb'
 
 # Start Game
 
-human_fleet = Fleet.new()
+human_fleet_1 = Fleet.new()
 computer_fleet = Fleet.new()
 
 puts <<-eos
@@ -20,12 +20,14 @@ puts <<-eos
   | 1x | Submarine        | 1    |
 eos
 
+pre_display_board
+
 # Layout ships on the boards
-get_user_input(human_fleet)
+get_user_input(human_fleet_1)
 random_get_user_input(computer_fleet)
 
 # Create human board
-human_board = PlayerBoard.new(human_fleet)
+human_board = PlayerBoard.new(human_fleet_1)
 human_board.generate_board(["Your Board"])
 
 # Create computer board
