@@ -30,11 +30,11 @@ end
 
 def get_user_input(fleet)
   get_ship(fleet, fleet.aircraft_carrier, "Aircraft Carrier")
-  # get_ship(fleet, fleet.battleship, "Battleship")
-  # get_ship(fleet, fleet.cruiser, "Cruiser")
-  # get_ship(fleet, fleet.destroyer_1, "Destroyer 1")
+  get_ship(fleet, fleet.battleship, "Battleship")
+  get_ship(fleet, fleet.cruiser, "Cruiser")
+  get_ship(fleet, fleet.destroyer_1, "Destroyer 1")
   # get_ship(fleet, fleet.destroyer_2, "Destroyer 2")
-  # get_ship(fleet, fleet.submarine_1, "Submarine 1")
+  get_ship(fleet, fleet.submarine_1, "Submarine 1")
   # get_ship(fleet, fleet.submarine_2, "Submarine 2")
 end
 
@@ -74,10 +74,10 @@ def human_shoot(human_screen)
   human_screen.shoot(coords)
 end
 
-def computer_shoot(computer_screen)
-  # Remove the randomness later
-  computer_screen.shoot(random_coords)
-end
+# def computer_shoot(computer_screen)
+#   # Remove the randomness later
+#   computer_screen.shoot(random_coords)
+# end
 
 def battle(human_board_1, human_screen_1, human_board_2, human_screen_2)
   winner = false
