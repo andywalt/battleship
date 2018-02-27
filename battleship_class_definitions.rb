@@ -1,6 +1,16 @@
 # require 'pry'
 require_relative 'battleship_utils.rb'
 
+
+def pre_display_board
+  @board = []
+    10.times do
+      @board << ["-","-","-","-","-","-","-","-","-","-"]
+    end
+    display_board(@board)
+  end
+
+
 class PlayerBoard
   attr_accessor :board, :fleet
 
@@ -12,7 +22,6 @@ class PlayerBoard
   def display
     display_board(@board)
   end
-
 
   def generate_board(message)
     10.times do

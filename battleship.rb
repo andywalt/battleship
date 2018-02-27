@@ -1,21 +1,23 @@
 require_relative 'battleship_class_definitions.rb'
 require_relative 'battleship_game_helpers.rb'
 
-#=================START GAME================
+# Start Game
 
 human_fleet = Fleet.new()
 computer_fleet = Fleet.new()
 
-# artii 'Battleship'
 puts <<-eos
-# Fleet table
-| #  | Ship             | Size |
-| -- | ---------------- | ---- |
-| 1x | Aircraft carrier | 5    |
-| 1x | Battleship       | 4    |
-| 1x | Cruiser          | 3    |
-| 2x | Destroyer        | 2    |
-| 2x | Submarine        | 1    |
+  Welcome to BATTLESHIP!
+  Below is a list of your battleships.
+
+  Fleet table
+  | #  | Ship             | Size |
+  | -- | ---------------- | ---- |
+  | 1x | Aircraft carrier | 5    |
+  | 1x | Battleship       | 4    |
+  | 1x | Cruiser          | 3    |
+  | 1x | Destroyer        | 2    |
+  | 1x | Submarine        | 1    |
 eos
 
 # Layout ships on the boards

@@ -1,6 +1,0 @@
-require "./game"
-require "./player"
-require "./grid"
-require "./cell"
-require "./ship"
-require "./score"

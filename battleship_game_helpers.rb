@@ -1,9 +1,18 @@
 #=======================GET USER INPUT=============================
 
+def pre_display_board
+  @board = []
+    10.times do
+      @board << ["-","-","-","-","-","-","-","-","-","-"]
+    end
+    display_board(@board)
+  end
+
 def ship_input_prompt(ship, name)
-  puts "Enter the position of your #{name} (length #{ship.length})"
+  pre_display_board
+  puts "Enter the position of your #{name} (length #{ship.length}). Choose Row A-J and Column 1-10 (Ex: B5)."
   ship.position = gets.chomp
-  puts "Enter the heading of your #{name} (h or v)"
+  puts "Enter the heading of your #{name} (H for Horizontal or V for Vertical)."
   ship.heading = gets.chomp
 end
 
@@ -21,11 +30,11 @@ end
 
 def get_user_input(fleet)
   get_ship(fleet, fleet.aircraft_carrier, "Aircraft Carrier")
-  get_ship(fleet, fleet.battleship, "Battleship")
-  get_ship(fleet, fleet.cruiser, "Cruiser")
-  get_ship(fleet, fleet.destroyer_1, "Destroyer 1")
+  # get_ship(fleet, fleet.battleship, "Battleship")
+  # get_ship(fleet, fleet.cruiser, "Cruiser")
+  # get_ship(fleet, fleet.destroyer_1, "Destroyer 1")
   # get_ship(fleet, fleet.destroyer_2, "Destroyer 2")
-  get_ship(fleet, fleet.submarine_1, "Submarine 1")
+  # get_ship(fleet, fleet.submarine_1, "Submarine 1")
   # get_ship(fleet, fleet.submarine_2, "Submarine 2")
 end
 
@@ -60,7 +69,7 @@ end
 #================BATTLE LOGIC======================
 
 def human_shoot(human_screen)
-  puts "Enter coordinates of shot:"
+  puts "Enter coordinates of shot: Choose Row A-J and Column 1-10."
   coords = gets.chomp
   human_screen.shoot(coords)
 end
