@@ -35,9 +35,6 @@ human_board_1.generate_board(["Player 1 Board"])
 human_board_2 = PlayerBoard.new(human_fleet_2)
 human_board_2.generate_board(["Player 2 Board"])
 
-# # Create computer board
-# computer_board = PlayerBoard.new(computer_fleet)
-# computer_board.generate_board(["Computer Board"])
 
 # Create human screen (view of the hits and misses)
 human_screen_1 = PlayerScreen.new(human_board_2)
@@ -47,8 +44,6 @@ human_screen_1.generate
 human_screen_2 = PlayerScreen.new(human_board_1)
 human_screen_2.generate
 
-# # Create computer screen (view of hits and misses)
-# computer_screen = PlayerScreen.new(human_board)
-# computer_screen.generate
+
 # Start battle
 battle(human_board_1, human_screen_1, human_board_2, human_screen_2)

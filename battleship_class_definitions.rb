@@ -10,6 +10,8 @@ def pre_display_board
   end
 
 
+# Creating the Player Board and placing the ships.
+
 class PlayerBoard
   attr_accessor :board, :fleet
 
@@ -48,13 +50,14 @@ class PlayerBoard
   end
 
   def update(coord_of_hit)
-    # p coord_of_hit
     @board[row(coord_of_hit) - 1][column(coord_of_hit) - 1] = "X"
     display_board(@board)
   end
 
 end
 
+
+# Showing the screen of opposing player.
 class PlayerScreen
 
   def initialize(enemy_board)
@@ -111,6 +114,7 @@ class PlayerScreen
   end
 end
 
+# Ship location, length, and heading.
 class Ship
   attr_accessor :position, :heading, :length, :hits
   attr_reader :x_coords, :y_coords, :combined_coords
@@ -177,7 +181,7 @@ class Fleet
     @filled_coords.concat(ship.combined_coords)
   end
 
-  # Returns false if there is collision detected
+  # Checks if a ships are colliding. 
   def check_coords(ship)
     if !(ship.combined_coords & @filled_coords).empty?
       false
